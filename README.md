@@ -1,5 +1,4 @@
-Hallo Professor Becker, hier eine kurze Anleitung zum Projekt und allen Features
-Bitte vertraulich mit dem Projekt umgehen, da ich ihnen zum ausführen meinen Vercel-Prisma Database Key und meinen Moralis-API-Key in die .env gepackt habe. 
+Hallo Professor Becker, hier eine kurze Anleitung zum Projekt und allen Features 
 ## Projekt ausführen
 
 Als erstes mit dem Terminal in das Root Directory des Projects navigieren
