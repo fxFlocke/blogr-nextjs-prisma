@@ -8,6 +8,12 @@ import { GetStaticProps } from "next"
 export const getStaticProps: GetStaticProps = async () => {
   const feed = await prisma.post.findMany() 
 
+  const Moralis = require("moralis").default;
+
+  Moralis.start({
+    apiKey: process.env.MORALIS_KEY,
+  })
+
   return { 
     props: { feed }, 
     revalidate: 10 

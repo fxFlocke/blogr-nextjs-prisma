@@ -1,9 +1,5 @@
 const Moralis = require("moralis").default;
 
-Moralis.start({
-  apiKey: process.env.MORALIS_KEY,
-})
-
 export default async (req, res) => {
 
   const {query} = req;
