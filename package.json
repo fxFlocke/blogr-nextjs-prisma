@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "dev": "next",
+    "postinstall": "prisma generate",
     "build": "prisma generate && next build",
-    "start": "next start",
-    "postinstall": "prisma generate"
+    "start": "next start"
   },
   "keywords": [],
   "author": "",

@@ -92,8 +92,8 @@ export default function DexInfo(){
     
       async function fetchPrices(one, two){
     
-            let server = 'http://localhost:3000' 
-            // 'https://your_deployment.server.com'
+            let server = 'https://portfolio-flockchain.vercel.app'
+            //'http://localhost:3000' Für lokale ausführung hier tauschen
             const res = await axios.get(`${server}/api/tokenPrice`, {
                 params: {addressOne: one, addressTwo: two}
               })

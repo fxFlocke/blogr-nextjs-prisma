@@ -1,6 +1,8 @@
 Hallo Professor Becker, hier eine kurze Anleitung zum Projekt und allen Features 
 ## Projekt ausführen
 
+Für eine lokale Ausführung bitte in der Datei: components/sections/DexInfo.tsx Zeile 97, die Webaddresse mit der LocalhostAddresse für den API-Call tauschen
+
 Als erstes mit dem Terminal in das Root Directory des Projects navigieren
 
 und folgende Befehle der Reihe nach durchführen(Die Prisma Studio Seite muss eventuell 1-2 mal refreshed werden)
