@@ -10,7 +10,7 @@ export default function Academics(){
             <div className="w-[350px] h-[600px] bg-[#440707] p-4 rounded-lg text-3xl font-bold">
                 <div className="max-w-sm h-[570px] pt-[30px] grid grid-cols-1 overflow-hidden rounded-lg shadow-lg bg-[#360808]">
                     <img
-                        src="dev.png"
+                        src="dev.PNG"
                         alt="React-Ecommerce"
                         width={320}
                         height={165} className="rounded-lg"/>
@@ -46,9 +46,9 @@ export default function Academics(){
                             Sema Software
                         </div>
                         <p className="text-base">
-                            Sema is the current Leader in CAD-Software in the wood consturction industry in germany.
+                            Sema is the current Leader in CAD-Software for the wood consturction industry in germany.
                             During my bachlor's degree I work here, developing an application for 3D-Scans and 
-                            digital measurements. The professional team there helped me a lot to develop myself further in every aspect.
+                            digital measurements. The professional team here helped me a lot to develop myself further in every aspect.
                         </p>
                     </div>
                     <div className="mt-auto px-6 pt-2 pb-4 text-sm">
@@ -64,26 +64,19 @@ export default function Academics(){
             <div className="w-[350px] h-[600px] bg-[#440707] p-4 rounded-lg text-3xl font-bold">
                 <div className="max-w-sm h-[570px] pt-[30px] grid grid-cols-1 overflow-hidden rounded-lg shadow-lg bg-[#360808]">
                     <img
-                        src="PMS_Logo1_Outline.ico"
+                        src="boxing.PNG"
                         alt="React-Ecommerce"
                         width={320}
                         height={165} className="rounded-lg"/>
                     <div className="px-6 py-2">
                         <div className="mb-2 text-xl font-bold">
-                            Swupel PMS
+                            Martial Arts and Power Lifting
                         </div>
                         <p className="text-base">
-                            Swupel PMS is a Non-Profit Organisation that develops a blockchain for land registry. 
-                            I was part of the team for a few months, met nice poeple and we discussed great ideas.
-                            Of curse there were also some coding sessions with all these smart brains.
+                            For many years I practised different Martial Arts as well as Power Lifiting, 
+                            both shaped my mentality and endurance. Pushing the limits, strengthen the will, 
+                            learn to focus in the right way and how to use it were some important abilities to learn from that.
                         </p>
-                    </div>
-                    <div className="mt-auto px-6 pt-2 pb-4 text-sm">
-                        <Link legacyBehavior href="https://swupel-pms.vercel.app/">
-                            <a target="_blank">
-                            <button className="cursor-pointer duration-300 ease-in shadow-gray-500/50 hover:scale-[1.05]">Reach Out</button>
-                            </a>
-                        </Link>
                     </div>
                 </div>
             </div>
@@ -127,9 +120,9 @@ export default function Academics(){
                             Acting and Script Writing
                         </div>
                         <p className="text-base">
-                            During a project from my university, I discorvered my love for acting and writing scripts.
-                            With a lot of imagination and a great sense for dramatic it seems like a perfect fit.
-                            You can watch the Video below and reach out to me via email if you are interested in ideas or an actor. 
+                            During a project from my university, I discovered my love for acting and writing scripts.
+                            With a lot of imagination and my great sense for dramatic its a perfect fit for me.
+                            You can watch the Video below and reach out to me via email if you are interested in commercial ideas or me as an actor. 
                         </p>
                     </div>
                     <div className="mt-auto px-6 pt-2 pb-4 text-sm">
@@ -150,9 +143,9 @@ export default function Academics(){
                             Blockchain Research
                         </div>
                         <p className="text-base">
-                            Blockchain Technology is from my perspective the most promising and interesting field in Computer Science.
-                            Next to the System Architecture itself, there are scaling Solutions, Decentralized Applications, DAOs and 
-                            of course Token Engineering.
+                            Blockchain Technology has some unbelievable potential value for our society.
+                            Next to the System Architecture itself, are Scaling Solutions, Decentralized Applications, DAOs and 
+                            Token Engineering the topics I am interested in.
                         </p>
                     </div>
                     <div className="mt-auto px-6 pt-2 pb-4 text-sm">

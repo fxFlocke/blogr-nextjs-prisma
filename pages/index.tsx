@@ -1,31 +1,50 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Post } from "../components/Types"
 import prisma from "../lib/prisma"
 import Header from "../components/Structure/Header"
 import Scroll from "../components/Structure/Scroll"
-import { GetStaticProps } from "next"
+import { GetServerSideProps, GetStaticProps } from "next"
+import { useRouter } from "next/router"
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const feed = await prisma.post.findMany() 
 
-  const Moralis = require("moralis").default;
-
-  Moralis.start({
-    apiKey: process.env.MORALIS_KEY,
-  })
-
   return { 
-    props: { feed }, 
-    revalidate: 10 
+    props: { feed }
   }
 }
 
 function Home(props){
+  
+  const router = useRouter()
+  const [isRefreshing, setIsRefreshing] = useState(false)
+
+  useEffect(() => {
+    setIsRefreshing(false);
+  }, [props]);
+
+  const refreshData = () => {
+    router.replace(router.asPath);
+    setIsRefreshing(true);
+  };
+
+  async function submitNote(title, content, author){
+    try{
+      const body = { title, content, author }
+      await fetch("api/post", {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+      })
+      }catch(err){
+        console.error(err)
+      }
+  }
 
   return(
     <div className="w-full h-full bg-[#60140c]">
       <Header/>
-      <Scroll posts={props.feed}/>
+      <Scroll posts={props.feed} noteSubmitHandler={submitNote}/>
     </div>
   )
 }

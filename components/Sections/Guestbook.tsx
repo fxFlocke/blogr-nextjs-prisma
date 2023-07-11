@@ -1,8 +1,9 @@
 import { useState } from "react";
 import PostCard from "../Cards/PostCard";
+import CreationCard from "../Cards/CreationCard"
 import { Post } from "../Types";
 
-export default function Guestbook({posts}: {posts: Post[]}){
+export default function Guestbook({posts, noteSubmitAPI}: {posts: Post[], noteSubmitAPI: (arg1: string, arg2: string, arg3: string) => void}){
 
     const [cards, setCards] = useState<Post[] | undefined>(posts);
 
@@ -14,7 +15,7 @@ export default function Guestbook({posts}: {posts: Post[]}){
               {cards.map((post: Post) => (
                 <PostCard key={post.id} post={post} />
               ))}
-              
+              <CreationCard noteSubmitAPI={noteSubmitAPI}/>
             </div>
           </div>
         </section>

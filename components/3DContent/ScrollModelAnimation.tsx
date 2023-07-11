@@ -23,21 +23,10 @@ const ScrollModelAnimation = () => {
     if (container && !renderer) {
       //Texture
       const textureLoader = new THREE.TextureLoader();
-      const eartTexture = textureLoader.load("/textures/earth/earth.jpeg");
-      const moonTexture = textureLoader.load("/textures/moon/moon.jpeg");
-      const sunTexture = textureLoader.load("/textures/sun/sun.jpeg");
-      const gradientTexture = textureLoader.load("/textures/gradients/3.jpg");
-      gradientTexture.magFilter = THREE.NearestFilter;
       const particlesTexture = textureLoader.load("/textures/particles/1.png");
 
-      //Material
-      const material = new THREE.MeshToonMaterial({
-        color: parameters.materialColor,
-        gradientMap: gradientTexture,
-      });
 
       //Object
-
       loadGLTFModel(scene, "/Desktop.glb", {
         receiveShadow: true,
         castShadow: true,
@@ -45,38 +34,6 @@ const ScrollModelAnimation = () => {
         setLoading(false);
       });
 
-      // loadDrillerModel(scene, "/Ohne Dach.gltf", {
-      //   receiveShadow: true,
-      //   castShadow: true,
-      // }).then(() => {
-      //   setLoading(false);
-      // });
-
-      const objectDistance = 4;
-      const mesh1 = new THREE.Mesh(
-        new THREE.TorusGeometry(1, 0.4, 16, 60),
-        material
-      );
-
-      const mesh2 = new THREE.Mesh(
-        new THREE.SphereGeometry(1),
-        new THREE.MeshStandardMaterial({
-          map: moonTexture,
-        })
-      );
-
-      const mesh3 = new THREE.Mesh(
-        new THREE.SphereGeometry(1),
-        new THREE.MeshStandardMaterial({
-          map: eartTexture,
-        })
-      );
-      const mesh4 = new THREE.Mesh(
-        new THREE.SphereGeometry(1),
-        new THREE.MeshStandardMaterial({
-          map: sunTexture,
-        })
-      );
       const mesh5 = new THREE.Mesh(
         new THREE.SphereGeometry(1),
         new THREE.MeshStandardMaterial({
@@ -85,24 +42,12 @@ const ScrollModelAnimation = () => {
         })
       );
 
-      mesh1.position.x = 3;
-      mesh2.position.x = -3;
-      mesh3.position.x = 3;
-      mesh4.position.x = -3;
       mesh5.position.x = 1.5;
 
-      mesh1.position.y = -objectDistance * 0;
-      mesh2.position.y = -objectDistance * 1;
-      mesh3.position.y = -objectDistance * 2;
-      mesh4.position.y = -50;
       mesh5.position.y = -12;
 
-      scene.add(mesh1, mesh2, mesh3, mesh4, mesh5);
-      const sectionMeshes = [mesh1, mesh2, mesh3, mesh4, mesh5];
-      mesh1.visible = false;
-      mesh2.visible = false;
-      mesh3.visible = false;
-      mesh4.visible = false;
+      scene.add(mesh5);
+      const sectionMeshes = [mesh5];
 
       //Lights
       const directioanlLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -121,8 +66,8 @@ const ScrollModelAnimation = () => {
       for (let i = 0; i < count * 3; i++) {
         positions[i * 3 + 0] = (Math.random() - 0.5) * 10;
         positions[i * 3 + 1] =
-          objectDistance * 0.5 -
-          Math.random() * objectDistance * 10;
+          10 * 0.5 -
+          Math.random() * 10 * 10;
         positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
         colors[i] = Math.random();
       }
@@ -247,7 +192,7 @@ const ScrollModelAnimation = () => {
         particles.rotation.y = elapsedTime * 0.02;
 
         //animate camera
-        camera.position.y = (-scrollY / sizes.height) * objectDistance;
+        camera.position.y = (-scrollY / sizes.height) * 5;
 
         const parallaxX = -cursor.x * 0.5;
         const parallaxY = cursor.y * 0.5;

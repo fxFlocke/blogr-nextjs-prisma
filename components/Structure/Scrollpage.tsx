@@ -7,6 +7,7 @@ import Guestbook from "../Sections/Guestbook";
 import { Post } from "../Types";
 
 var postings: Post[]
+var noteSubmit: (arg1: string, arg2: string, arg3: string) => void
 
 export const DivContainer = forwardRef<HTMLInputElement>(({ children }, ref) => (
     <>
@@ -24,15 +25,16 @@ export const DivContainer = forwardRef<HTMLInputElement>(({ children }, ref) => 
                 <DexInfo/>
         </section>
         <section className="grid items-center relative text-lg uppercase pt-[50px] font-neue text-[#ffeded]" id='gallery'>
-            <Guestbook posts={postings}/>
+            <Guestbook posts={postings} noteSubmitAPI={noteSubmit}/>
         </section>
         <br></br>
     </>
 ));
 
-const Loader = ({posts}: {posts: Post[]}) => {
+const Loader = ({posts, noteSubmitHandler}: {posts: Post[], noteSubmitHandler: (arg1: string, arg2: string, arg3: string) => void}) => {
 
     postings = posts
+    noteSubmit = noteSubmitHandler
 
     return (
         <DivContainer/>
