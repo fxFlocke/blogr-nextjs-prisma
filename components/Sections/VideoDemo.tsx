@@ -6,7 +6,7 @@ export default function VideoDemo(){
                     <div className='text-center font-inner pb-4'>
                         <h2 className='text-2xl pt-6'>Project Healthhome, Hochschule Kempten</h2>
                     </div>
-                    <video src="./MarketingVideo.mov" controls className="rounded-lg"/>
+                    <video src="./MarketingVideo.mp4" controls className="rounded-lg"/>
                 </div>
             </div>
         </div>
