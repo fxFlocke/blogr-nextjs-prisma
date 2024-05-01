@@ -4,3 +4,10 @@ node_modules/
 .env
 .vercel
 .env*.local
+next-env.d.ts
+package-lock.josn
+package.json
+postcss.config.js
+wailwind.config.js
+tsconfig.json
+yarn.lock
